@@ -13,7 +13,7 @@ O( )
  */
 
 
-class Q1684 {
+class Main {
     class Solution {
         fun countConsistentStrings(allowed: String, words: Array<String>): Int {
             val exist = BooleanArray(26)

@@ -13,7 +13,7 @@ O( )
  */
 
 
-class Q3199 {
+class Main {
     class Solution {
         fun tripletCount(a: IntArray, b: IntArray, c: IntArray): Int {
             var ans = 0

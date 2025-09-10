@@ -13,7 +13,7 @@ O( )
  */
 
 
-class Q2515 {
+class Main {
     class Solution {
         var n: Int = 0
 

@@ -13,7 +13,7 @@ O( )
  */
 
 
-class Q2427 {
+class Main {
     class Solution {
         fun getFactors(num: Int): MutableSet<Int> {
             val set = mutableSetOf<Int>()

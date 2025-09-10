@@ -13,7 +13,7 @@ O( )
  */
 
 
-class Q170 {
+class Main {
     class TwoSum() {
         val nums = mutableMapOf<Int, Int>()
 

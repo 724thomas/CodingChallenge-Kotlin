@@ -13,7 +13,7 @@ O( )
  */
 
 
-class Q2728 {
+class Main {
 /*
 /**
  * Definition for a street.

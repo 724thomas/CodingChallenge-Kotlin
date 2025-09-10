@@ -13,7 +13,7 @@ O( )
  */
 
 
-class Q3662 {
+class Main {
     class Solution {
         fun filterCharacters(s: String, k: Int): String {
             val counter = HashMap<Char, Int>()

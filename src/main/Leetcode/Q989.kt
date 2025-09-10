@@ -15,7 +15,7 @@ O( )
  */
 
 
-class Q989 {
+class Main {
     class Solution {
         fun addToArrayForm(num: IntArray, k: Int): List<Int> {
             return (BigInteger(num.joinToString("")) + k.toBigInteger()).toString().map { it - '0' }

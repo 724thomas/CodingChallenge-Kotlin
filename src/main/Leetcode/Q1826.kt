@@ -13,7 +13,7 @@ O( )
  */
 
 
-class Q1826 {
+class Main {
     class Solution {
         fun badSensor(sensor1: IntArray, sensor2: IntArray): Int {
             val n: Int = sensor1.size

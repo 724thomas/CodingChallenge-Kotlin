@@ -13,7 +13,7 @@ O( )
  */
 
 
-class Q2432 {
+class Main {
     class Solution {
         fun hardestWorker(n: Int, logs: Array<IntArray>): Int {
             var id = Int.MAX_VALUE
