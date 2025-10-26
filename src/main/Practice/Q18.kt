@@ -1,4 +1,4 @@
-package practice
+package practice.q18
 
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter

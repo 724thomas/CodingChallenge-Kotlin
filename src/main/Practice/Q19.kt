@@ -1,4 +1,4 @@
-package practice
+package practice.q19
 
 /**
 🧩 문제 22 — ETC 기반 NotificationSender 설계 (행동 확장형)
