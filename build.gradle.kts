@@ -37,6 +37,13 @@ kotlin {
     compilerOptions {
         freeCompilerArgs.addAll("-Xjsr305=strict")
     }
+    
+    sourceSets {
+        main {
+            kotlin.srcDirs("src/main/kotlin", "src/main/Practice")
+            // 각 Practice 파일은 별도 패키지로 분리되어 있어 개별 실행 가능
+        }
+    }
 }
 
 tasks.withType<Test> {

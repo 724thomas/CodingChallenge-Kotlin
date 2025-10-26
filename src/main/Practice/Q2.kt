@@ -1,5 +1,4 @@
-package Leetcode.kotlin
-
+package practice.q2
 
 /*
 🧩 문제 2 — 상속과 접근 제어
@@ -62,4 +61,14 @@ class Car(
     override fun move() {
         println("${brand}가 ${speed}km/h로 이동 중입니다.")
     }
+}
+
+fun main() {
+    println("=== Q2 실행 예제 ===")
+    
+    val car = Car("현대", 100)
+    car.move()
+    car.printSpeed()
+    
+    println("=== 실행 완료 ===")
 }

@@ -1,5 +1,6 @@
-package Leetcode.kotlin
+package practice.q11
 
+import java.time.LocalDateTime
 
 /*
 🧩 문제 11 — 결제(Payment) 상태 전이 모델링
@@ -48,4 +49,22 @@ fun PaymentStatus.canTransitionTo(next: PaymentStatus): Boolean = when (this) {
     is PaymentStatus.Authorized -> next is PaymentStatus.Captured
     is PaymentStatus.Captured -> next is PaymentStatus.Refunded
     is PaymentStatus.Refunded, is PaymentStatus.Failed -> false
+}
+
+fun main() {
+    println("=== Q11 실행 예제 ===")
+    
+    val requested = PaymentStatus.Requested
+    val authorized = PaymentStatus.Authorized("PG-12345")
+    val captured = PaymentStatus.Captured(LocalDateTime.now())
+    val refunded = PaymentStatus.Refunded(10000)
+    val failed = PaymentStatus.Failed("카드 한도 초과")
+    
+    println("Requested → Authorized: ${requested.canTransitionTo(authorized)}")
+    println("Authorized → Captured: ${authorized.canTransitionTo(captured)}")
+    println("Captured → Refunded: ${captured.canTransitionTo(refunded)}")
+    println("Captured → Failed: ${captured.canTransitionTo(failed)}")
+    println("Authorized → Requested: ${authorized.canTransitionTo(requested)}")
+    
+    println("\n=== 실행 완료 ===")
 }

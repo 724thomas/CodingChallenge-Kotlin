@@ -1,4 +1,4 @@
-package Leetcode.kotlin
+package practice.q1
 
 
 /*
@@ -43,26 +43,45 @@ setter를 호출하지 못하도록 val로 바꾸는 경우, 왜 문제가 되�
 Kotlin 코드 마지막에 main()을 작성해 객체를 생성하고 검증이 작동함을 확인하시오.
  */
 
-data class User(
-    private var name: String,
-    private var age: Int,
+class User(
+    private val _name: String,
+    private var _age: Int,
 ) {
-    var name: String
-        get() = name.uppercase()
-        private set(value) {
-            name = value
-        }
+    val name: String
+        get() = _name.uppercase()
 
     var age: Int
-        get() = age
-        set (value) {
-            require(value >=0) { "나이는 음수가 될 수 없습니다." }
-            age = value
+        get() = _age
+        set(value) {
+            require(value >= 0) { "나이는 음수가 될 수 없습니다." }
+            _age = value
         }
 
     init {
-        require(age>=0) { "나이는 음수가 될 수 없습니다." }
+        require(_age >= 0) { "나이는 음수가 될 수 없습니다." }
     }
+}
 
-
+fun main() {
+    // 정상 생성
+    val user1 = User("홍길동", 25)
+    println("이름: ${user1.name}, 나이: ${user1.age}")
+    
+    // age 변경
+    user1.age = 30
+    println("변경 후 나이: ${user1.age}")
+    
+    // 음수 나이 테스트 (예외 발생)
+    try {
+        val user2 = User("김철수", -1)
+    } catch (e: IllegalArgumentException) {
+        println("생성자 검증: ${e.message}")
+    }
+    
+    // setter 음수 테스트 (예외 발생)
+    try {
+        user1.age = -5
+    } catch (e: IllegalArgumentException) {
+        println("Setter 검증: ${e.message}")
+    }
 }

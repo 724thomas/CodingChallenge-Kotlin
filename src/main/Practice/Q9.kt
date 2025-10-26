@@ -1,4 +1,4 @@
-package Leetcode.kotlin
+package practice.q9
 
 
 /*

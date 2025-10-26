@@ -1,5 +1,6 @@
-package Leetcode.kotlin
+package practice.q14
 
+import java.time.LocalDateTime
 
 /*
 🧩 문제 15 — 배송(Delivery) 상태 전이 로직을 sealed class로 설계하시오
@@ -56,7 +57,26 @@ sealed class DeliveryStatus {
 
 fun DeliveryStatus.canTransitionTo(next: DeliveryStatus): Boolean = when (this) {
     is DeliveryStatus.Created -> next is DeliveryStatus.Shipped || next is DeliveryStatus.Canceled
-    is DeliveryStatus.Shipped -> next == DeliveryStatus.InTransit || next is DeliveryStatus.Canceled
-    is DeliveryStatus.InTransit -> next == DeliveryStatus.Delivered
-    is DeliveryStatus.Created -> next == DeliveryStatus.Canceled
+    is DeliveryStatus.Shipped -> next is DeliveryStatus.InTransit || next is DeliveryStatus.Canceled
+    is DeliveryStatus.InTransit -> next is DeliveryStatus.Delivered
     is DeliveryStatus.Delivered, is DeliveryStatus.Canceled -> false
+}
+
+fun main() {
+    println("=== Q14 실행 예제 ===")
+    
+    val created = DeliveryStatus.Created
+    val shipped = DeliveryStatus.Shipped("1234567890")
+    val inTransit = DeliveryStatus.InTransit("서울 강남구")
+    val delivered = DeliveryStatus.Delivered(LocalDateTime.now())
+    val canceled = DeliveryStatus.Canceled("고객 요청")
+    
+    println("Created → Shipped: ${created.canTransitionTo(shipped)}")
+    println("Shipped → InTransit: ${shipped.canTransitionTo(inTransit)}")
+    println("InTransit → Delivered: ${inTransit.canTransitionTo(delivered)}")
+    println("Created → Canceled: ${created.canTransitionTo(canceled)}")
+    println("Delivered → Shipped: ${delivered.canTransitionTo(shipped)}")
+    println("Canceled → Created: ${canceled.canTransitionTo(created)}")
+    
+    println("\n=== 실행 완료 ===")
+}

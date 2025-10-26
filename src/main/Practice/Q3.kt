@@ -1,5 +1,4 @@
-package Leetcode.kotlin
-
+package practice.q3
 
 /*
 📜 요구사항
@@ -52,15 +51,28 @@ data class Order(
     val prices: List<Int> = emptyList()
 )
 
-class OrderService {
-    fun totalPrice(
-        orders: List<Order>?,
-        customer: String
-    ): Int = orders
-        ?.filter { it.customer == customer }
+// 확장 함수로 변환
+fun List<Order>?.totalPriceForCustomer(customer: String): Int = 
+    this?.filter { it.customer == customer }
         ?.flatMap { it.prices }
         ?.sum()
         ?: 0
-    }
+
+fun main() {
+    println("=== Q3 실행 예제 ===")
+    
+    val orders = listOf(
+        Order("홍길동", listOf(1000, 2000, 3000)),
+        Order("김철수", listOf(5000, 3000)),
+        Order("홍길동", listOf(1500, 2500))
+    )
+    
+    val total = orders.totalPriceForCustomer("홍길동")
+    println("홍길동의 총 구매액: $total")
+    
+    val emptyTotal = null.totalPriceForCustomer("홍길동")
+    println("null 컬렉션 처리: $emptyTotal")
+    
+    println("=== 실행 완료 ===")
 }
 

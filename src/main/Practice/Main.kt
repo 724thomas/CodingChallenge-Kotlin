@@ -1,6 +1,10 @@
-package Leetcode.kotlin
+package practice
 
-
-/*
+/**
 
  */
+
+fun main() {
+
+}
+
