@@ -45,6 +45,7 @@ fun main() {
 
     val result2 = applyFilters(filters, notifications)
 
+
 }
 
 data class NotificationDto(
