@@ -70,6 +70,7 @@ data class User(
     }
 }
 
+
 data class UpdateUserRequest(
     val nickname: String?,
     val age: Int?,
