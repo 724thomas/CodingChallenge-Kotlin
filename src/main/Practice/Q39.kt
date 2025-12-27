@@ -119,7 +119,7 @@ package practice.q39
  *      lastNotificationId: Long,
  *      size: Long,
  * ): List<Long> {
- *      val subquery = JPAExpression
+ *      val subquery = JPAExpressions
  *          .selectOne()
  *          .from(pushLog)
  *          .where(pushLog.notificationId.eq(notification.id))
